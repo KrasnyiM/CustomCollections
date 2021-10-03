@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DelphiTask_1
 {
-    class ArrRingBuffer : IFunc
+    public class ArrRingBuffer : IFunc
     {
 
         private int[] arrBuffer;
