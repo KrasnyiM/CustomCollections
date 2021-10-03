@@ -8,7 +8,6 @@ namespace DelphiTask_1
 {
     public class ArrRingBuffer : IFunc
     {
-
         private int[] arrBuffer;
         private int head;
         private int tail;

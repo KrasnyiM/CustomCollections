@@ -9,9 +9,8 @@ namespace DelphiTask_1
     public class ArrQueue : IFunc
     {
         private int[] arrayQueue;
-        private int currentIndex;
         ///<inheritdoc/>
-        public int Count { get { return currentIndex; } set { currentIndex = value; } }
+        public int Count { get; private set; }
         /// <summary>
         /// Constructor for initializing fields.
         /// </summary>

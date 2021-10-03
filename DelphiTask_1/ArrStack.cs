@@ -11,9 +11,6 @@ namespace DelphiTask_1
     /// </summary>
     public class ArrStack : IFunc
     {
-        /// <summary>
-        /// Array that stores data.
-        /// </summary>
         private int[] arrayStack;
         /// <inheritdoc />
         public int Count { get; private set; }

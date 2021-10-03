@@ -13,68 +13,64 @@ namespace TestDelphiTask_1
         [Fact]
         public void Peek_IfContainElements_ReturnFirst()
         {
-            ArrStack arr = new ArrStack(3);
+            //Arrange
+            ArrRingBuffer sut = new ArrRingBuffer(1);
+            int expected= 7;
+            sut.Push(expected);
 
-            int first = 7;
-            int second = 3;
-            int third = 5;
+            //Act
+            int result = sut.Peek();
 
-            arr.Push(first);
-            arr.Push(second);
-            arr.Push(third);
-
-            int firstNumber = arr.Peek();
-
-            Assert.Equal(third, firstNumber);
+            //Assert
+            Assert.Equal(expected, result);
         }
 
         [Fact]
         public void Pop_IfContainElements_ReturnFirst()
         {
-            ArrStack arr = new ArrStack(3);
+            //Arrange
+            ArrRingBuffer sut = new ArrRingBuffer(1);
+            int expected= 7;
+            sut.Push(expected);
 
-            int first = 7;
-            int second = 3;
-            int third = 5;
+            //Act
+            int result = sut.Pop();
 
-            arr.Push(first);
-            arr.Push(second);
-            arr.Push(third);
-
-            int firstNumber = arr.Pop();
-
-            Assert.Equal(third, firstNumber);
+            //Assert
+            Assert.Equal(expected, result);
         }
 
         [Fact]
         public void Pop_IfContaineElements_RemoveFirst()
         {
-            ArrStack arr = new ArrStack(3);
+            //Arrange
+            ArrRingBuffer sut = new ArrRingBuffer(2);
+            int expected= 7;
+            int first = 3;
+            sut.Push(first);
+            sut.Push(expected);
 
-            int first = 7;
-            int second = 3;
-            int third = 5;
+            //Act
+            sut.Pop();
+            int result = sut.Pop();
 
-            arr.Push(first);
-            arr.Push(second);
-            arr.Push(third);
-
-            arr.Pop();
-            int secondNumber = arr.Pop();
-
-            Assert.NotEqual(third, secondNumber);
+            //Assert
+            Assert.Equal(expected, result);
         }
 
         [Fact]
         public void Push_AddElements()
         {
-            ArrStack arr = new ArrStack(3);
+            //Arrange
+            ArrRingBuffer sut = new ArrRingBuffer(1);
 
-            arr.Push(1);
-            arr.Push(2);
-            arr.Push(3);
+            //Act
+            int initial = sut.Count;
+            sut.Push(12);
 
-            Assert.True(arr.Count > 0, "Count = 0");
+            //Assert
+            Assert.Equal(initial, 0);
+            Assert.Equal(sut.Count, 1);
         }
     }
 }
