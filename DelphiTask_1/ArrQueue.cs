@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DelphiTask_1
 {
-    class ArrQueue : IFunc
+    public class ArrQueue : IFunc
     {
         private int[] arrayQueue;
         private int currentIndex;
