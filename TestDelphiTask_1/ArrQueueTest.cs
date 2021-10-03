@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DelphiTask_1;
+using System;
 using Xunit;
+using DelphiTask_1;
 
 namespace TestDelphiTask_1
 {
-    public class ArrStackTest
+    
+    public class ArrQueueTest
     {
         [Fact]
         public void Peek_IfContainElements_ReturnFirst()
@@ -25,7 +22,7 @@ namespace TestDelphiTask_1
         }
 
         [Fact]
-        public void Pop_IfContainElements_ReturnFirst()
+        public void Pop_IfContaineElements_ReturnFirst()
         {
             ArrRingBuffer sut = new ArrRingBuffer(1);
 
@@ -43,8 +40,8 @@ namespace TestDelphiTask_1
         {
             ArrRingBuffer sut = new ArrRingBuffer(2);
 
-            int expected= 7;
-            int first = 3;
+            int first= 7;
+            int expected = 3;
 
             sut.Push(first);
             sut.Push(expected);
