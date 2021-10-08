@@ -9,18 +9,11 @@ namespace DelphiTask_1
     /// <summary>
     /// ArrStack, Class which implement array based stack.
     /// </summary>
-    class ArrStack : IFunc
+    public class ArrStack : IFunc
     {
-        /// <summary>
-        /// Array that stores data.
-        /// </summary>
         private int[] arrayStack;
-        /// <summary>
-        /// Array element index.
-        /// </summary>
-        private int currentIndex;
         /// <inheritdoc />
-        public int Count { get { return currentIndex; } set { currentIndex = value; } }
+        public int Count { get; private set; }
         /// <summary>
         /// Constructor for initializing fields.
         /// </summary>
@@ -33,7 +26,7 @@ namespace DelphiTask_1
         /// <inheritdoc />
         public void Push(int value)
         {
-            if (value > arrayStack.Length)
+            if (Count == arrayStack.Length)
             {
                 return;
             }
