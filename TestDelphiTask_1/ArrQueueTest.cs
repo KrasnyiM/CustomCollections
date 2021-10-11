@@ -11,7 +11,7 @@ namespace TestDelphiTask_1
         public void Peek_IfContainElements_ReturnFirst()
         {
             //Arrange
-            ArrQueue sut = new ArrQueue(1);
+            ArrRingBuffer sut = new ArrRingBuffer(1);
             int expected= 7;
             sut.Push(expected);
 
@@ -26,7 +26,7 @@ namespace TestDelphiTask_1
         public void Pop_IfContaineElements_ReturnFirst()
         {
             //Arrange
-            ArrQueue sut = new ArrQueue(1);
+            ArrRingBuffer sut = new ArrRingBuffer(1);
             int expected= 7;
             sut.Push(expected);
 
@@ -41,7 +41,7 @@ namespace TestDelphiTask_1
         public void Pop_IfContaineElements_RemoveFirst()
         {
             //Arrange
-            ArrQueue sut = new ArrQueue(2);
+            ArrRingBuffer sut = new ArrRingBuffer(2);
             int first= 7;
             int expected = 3;
             sut.Push(first);
@@ -59,7 +59,7 @@ namespace TestDelphiTask_1
         public void Push_AddElements()
         {
             //Arrange
-            ArrQueue sut = new ArrQueue(1);
+            ArrRingBuffer sut = new ArrRingBuffer(1);
 
             //Act
             int initial = sut.Count;
