@@ -9,7 +9,7 @@ namespace DelphiTask_1
     /// <summary>
     /// ArrStack, Class which implement array based stack.
     /// </summary>
-    class ArrStack : IFunc
+    public class ArrStack : IFunc
     {
         private int[] arrayStack;
         /// <inheritdoc />
@@ -26,7 +26,7 @@ namespace DelphiTask_1
         /// <inheritdoc />
         public void Push(int value)
         {
-            if (value > arrayStack.Length)
+            if (Count == arrayStack.Length)
             {
                 return;
             }

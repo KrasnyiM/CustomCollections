@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace DelphiTask_1
 {
     /// <summary>
-    /// ArrRingBuffer, Class which implement array based ring buffer.
+    /// MyLinkeList, Class which implement array based ring buffer.
     /// </summary>
-    class ArrRingBuffer : IFunc
+    public class ArrRingBuffer : IFunc
     {
         private int[] arrBuffer;
         private int head;
