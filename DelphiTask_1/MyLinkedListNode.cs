@@ -14,7 +14,7 @@ namespace DelphiTask_1
         /// <summary>
         /// Field which stores a data.
         /// </summary>
-        public int Data { get; private set; }
+        public int Data { get; set; }
         /// <summary>
         /// Property which stores a reference to the next element.
         /// </summary>
