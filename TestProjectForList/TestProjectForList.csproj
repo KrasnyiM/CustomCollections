@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DelphiLinkedListQueue\DelphiLinkedListQueue.csproj" />
+    <ProjectReference Include="..\DelphiLinkedListRingBuffer\DelphiLinkedListRingBuffer.csproj" />
+    <ProjectReference Include="..\DelphiLinkedListStack\DelphiLinkedListStack.csproj" />
+    <ProjectReference Include="..\DelphiLinkedList\DelphiLinkedList.csproj" />
     <ProjectReference Include="..\DelphiTask_1\DelphiTask_1.csproj" />
   </ItemGroup>
 

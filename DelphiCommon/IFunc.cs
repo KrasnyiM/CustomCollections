@@ -9,7 +9,7 @@ namespace DelphiTask_1
     /// <summary>
     /// The interface that declares the field and methods for inheritance.
     /// </summary>
-    interface IFunc
+    public interface IFunc
     {
         /// <summary>
         /// Property that stores the number of elements.
