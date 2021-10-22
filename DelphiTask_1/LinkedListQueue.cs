@@ -9,16 +9,16 @@ namespace DelphiTask_1
     /// <summary>
     /// MyLinkeList, Class which implement linked list based queue.
     /// </summary>
-    public class LinkedListQueue : IFunc
+    public class LinkedListQueue <T> : IFunc <T>
     {
         /// <summary>
         /// The field that stores the first item.
         /// </summary>
-        public MyLinkedListNode Head { get; set; }
+        public MyLinkedListNode <T> Head { get; set; }
         /// <summary>
         /// The field that stores the last item.
         /// </summary>
-        public MyLinkedListNode Tail { get; set; }
+        public MyLinkedListNode <T> Tail { get; set; }
         ///<inheritdoc/>
         public int Count { get; set; }
         /// <summary>
@@ -31,9 +31,9 @@ namespace DelphiTask_1
             Count = 0;
         }
         ///<inheritdoc/>
-        public void Push(int value)
+        public void Push(T value)
         {
-            MyLinkedListNode node = new MyLinkedListNode(value);
+            MyLinkedListNode <T> node = new MyLinkedListNode<T>(value);
 
             if (Head == null)
             {
@@ -48,20 +48,20 @@ namespace DelphiTask_1
             Count++;
         }
         ///<inheritdoc/>
-        public int Pop()
+        public T Pop()
         {
             if (Count == 0)
             {
                 return default;
             }
 
-            int value = Head.Data;
+            var value = Head.Data;
             Head = Head.Next;
             Count--;
             return value;
         }
         ///<inheritdoc/>
-        public int Peek()
+        public T Peek()
         {
             if (Count == 0)
             {

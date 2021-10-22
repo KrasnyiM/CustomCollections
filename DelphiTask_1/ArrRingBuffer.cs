@@ -9,9 +9,9 @@ namespace DelphiTask_1
     /// <summary>
     /// MyLinkeList, Class which implement array based ring buffer.
     /// </summary>
-    public class ArrRingBuffer : IFunc
+    public class ArrRingBuffer <T> : IFunc <T>
     {
-        private int[] arrBuffer;
+        private T[] arrBuffer;
         private int head;
         private int tail;
         /// <inheritdoc />
@@ -24,10 +24,10 @@ namespace DelphiTask_1
         {
             head = 0;
             tail = 0;
-            arrBuffer = new int[length];
+            arrBuffer = new T[length];
         }
         /// <inheritdoc />
-        public int Peek()
+        public T Peek()
         {
             if (Count == 0)
             {
@@ -36,7 +36,7 @@ namespace DelphiTask_1
             return arrBuffer[tail];
         }
         /// <inheritdoc />
-        public void Push(int value)
+        public void Push(T value)
         {
             if (Count == arrBuffer.Length)
             {
@@ -48,14 +48,14 @@ namespace DelphiTask_1
             head = (head + 1) % arrBuffer.Length;             
         }
         /// <inheritdoc />
-        public int Pop()
+        public T Pop()
         {
             if(Count == 0)
             {
                 return default;
             }
 
-            int result = arrBuffer[tail];
+            var result = arrBuffer[tail];
             Count--;
             tail = (tail+1) % arrBuffer.Length;            
             return result;

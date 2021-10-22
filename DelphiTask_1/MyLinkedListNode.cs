@@ -9,21 +9,21 @@ namespace DelphiTask_1
     /// <summary>
     /// MyLinkedListNode, Class which implement linked list node.
     /// </summary>
-    public class MyLinkedListNode
+    public class MyLinkedListNode <T>
     {
         /// <summary>
         /// Field which stores a data.
         /// </summary>
-        public int Data { get; set; }
+        public T Data { get; set; }
         /// <summary>
         /// Property which stores a reference to the next element.
         /// </summary>
-        public MyLinkedListNode Next { get; set; }
+        public MyLinkedListNode <T> Next { get; set; }
         /// <summary>
         /// Constructor for initializing fields.
         /// </summary>
         /// <param name="x"></param>
-        public MyLinkedListNode(int x)
+        public MyLinkedListNode(T x)
         {
             Data = x;
             Next = null;

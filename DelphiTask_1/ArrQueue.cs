@@ -9,9 +9,9 @@ namespace DelphiTask_1
     /// <summary>
     /// MyLinkeList, Class which implement array based queue.
     /// </summary>
-    public class ArrQueue : IFunc
+    public class ArrQueue <T> : IFunc <T>
     {
-        private int[] arrayQueue;
+        private T [] arrayQueue;
         ///<inheritdoc/>
         public int Count { get; private set; }
         /// <summary>
@@ -21,10 +21,10 @@ namespace DelphiTask_1
         public ArrQueue(int length)
         {
             Count = 0;
-            arrayQueue = new int[length];
+            arrayQueue = new T[length];
         }
         ///<inheritdoc/>
-        public int Peek()
+        public T Peek()
         {
             if (Count == 0)
             {
@@ -33,26 +33,26 @@ namespace DelphiTask_1
             return arrayQueue[0];
         }
         ///<inheritdoc/>
-        public int Pop()
+        public T Pop()
         {
             if (Count == 0)
             {
                 return default;
             }
 
-            int value = arrayQueue[0];
+            var value = arrayQueue[0];
 
             for (int i = 0; i < Count - 1; i++)
             {
                 arrayQueue[i] = arrayQueue[i + 1];
             }
 
-            arrayQueue[Count - 1] = 0;
+            arrayQueue[Count - 1] = default;
             Count--;
             return value;
         }
         ///<inheritdoc/>
-        public void Push(int value)
+        public void Push(T value)
         {
             if (Count == arrayQueue.Length)
             {

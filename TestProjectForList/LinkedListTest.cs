@@ -10,7 +10,7 @@ namespace TestProjectForList
         public void Peek_IfContainElements_ReturnFirst()
         {
             //Arrange
-            MyLinkedList sut = new MyLinkedList();
+            MyLinkedList<int> sut = new MyLinkedList<int>();
             int expected = 7;
             sut.Push(expected);
 
@@ -25,7 +25,7 @@ namespace TestProjectForList
         public void Pop_IfContaineElements_ReturnFirst()
         {
             //Arrange
-            MyLinkedList sut = new MyLinkedList();
+            MyLinkedList<int> sut = new MyLinkedList<int>();
             int expected = 7;
             sut.Push(expected);
 
@@ -40,7 +40,7 @@ namespace TestProjectForList
         public void Pop_IfContaineElements_RemoveFirst()
         {
             //Arrange
-            MyLinkedList sut = new MyLinkedList();
+            MyLinkedList<int> sut = new MyLinkedList<int>();
             int second = 7;
             int expected = 3;
             sut.Push(expected);
@@ -58,7 +58,7 @@ namespace TestProjectForList
         public void Push_AddElements()
         {
             //Arrange
-            MyLinkedList sut = new MyLinkedList();
+            MyLinkedList<int> sut = new MyLinkedList<int>();
 
             //Act
             int initial = sut.Count;
