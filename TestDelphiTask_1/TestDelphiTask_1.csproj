@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DelphiArrQueue\DelphiArrQueue.csproj" />
+    <ProjectReference Include="..\DelphiArrRingBuffer\DelphiArrRingBuffer.csproj" />
+    <ProjectReference Include="..\DelphiArrStack\DelphiArrStack.csproj" />
     <ProjectReference Include="..\DelphiTask_1\DelphiTask_1.csproj" />
   </ItemGroup>
 
