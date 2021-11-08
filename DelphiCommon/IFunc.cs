@@ -9,7 +9,7 @@ namespace DelphiTask_1
     /// <summary>
     /// The interface that declares the field and methods for inheritance.
     /// </summary>
-    public interface IFunc
+    public interface IFunc <T>
     {
         /// <summary>
         /// Property that stores the number of elements.
@@ -19,16 +19,16 @@ namespace DelphiTask_1
         /// Method that adds elements to an array.
         /// </summary>
         /// <param name="value"></param>
-        void Push(int value);
+        void Push(T value);
         /// <summary>
         /// Method that retrieves first item.
         /// </summary>
         /// <returns>First value</returns>
-        int Pop();
+        T Pop();
         /// <summary>
         /// Just returns first value.
         /// </summary>
         /// <returns>First value</returns>
-        int Peek();
+        T Peek();
     }
 }

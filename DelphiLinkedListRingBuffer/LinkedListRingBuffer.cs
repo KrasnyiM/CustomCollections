@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace DelphiTask_1
 {
-    public class LinkedListRingBuffer : IFunc
+    public class LinkedListRingBuffer<T> : IFunc<T>
     {
         /// <summary>
         /// Property which stores a reference to the first element.
         /// </summary>
-        public MyLinkedListNode Head { get; set; }
+        public MyLinkedListNode<T> Head { get; set; }
         /// <summary>
         /// Property for read data.
         /// </summary>
-        public MyLinkedListNode Read { get; set; }
+        public MyLinkedListNode<T> Read { get; set; }
         /// <summary>
         /// Property which stores a reference to the last element.
         /// </summary>
-        public MyLinkedListNode Tail { get; set; }
+        public MyLinkedListNode<T> Tail { get; set; }
         /// <summary>
         /// Property for write data.
         /// </summary>
-        public MyLinkedListNode Write { get; set; }
+        public MyLinkedListNode<T> Write { get; set; }
         ///<inheritdoc/>
         public int Count { get;private set; }
 
@@ -46,7 +46,7 @@ namespace DelphiTask_1
         {
             for (int i = 0; i < length; i++)
             {
-                MyLinkedListNode node = new MyLinkedListNode(0);
+                MyLinkedListNode<T> node = new MyLinkedListNode<T>(default);
                 if (Head == null)
                 {
                     Head = node;
@@ -62,7 +62,7 @@ namespace DelphiTask_1
             }
         }
         ///<inheritdoc/>
-        public int Peek()
+        public T Peek()
         {
             if (Count == 0)
             {
@@ -71,14 +71,14 @@ namespace DelphiTask_1
             return Read.Data;
         }
         ///<inheritdoc/>
-        public int Pop()
+        public T Pop()
         {
             if (Count == 0)
             {
                 return default;
             }
 
-            int value;
+            T value;
             value = Read.Data;
             Read = Read.Next;
             Count--;
@@ -86,7 +86,7 @@ namespace DelphiTask_1
             return value;
         }
         ///<inheritdoc/>
-        public void Push(int value)
+        public void Push(T value)
         {
             if (length == Count)
             {
