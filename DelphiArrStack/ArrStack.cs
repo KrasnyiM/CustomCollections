@@ -9,9 +9,9 @@ namespace DelphiTask_1
     /// <summary>
     /// ArrStack, Class which implement array based stack.
     /// </summary>
-    public class ArrStack : IFunc
+    public class ArrStack<T> : IFunc<T>
     {
-        private int[] arrayStack;
+        private T[] arrayStack;
         /// <inheritdoc />
         public int Count { get; private set; }
         /// <summary>
@@ -21,10 +21,10 @@ namespace DelphiTask_1
         public ArrStack(int length)
         {
             Count = 0;
-            arrayStack = new int[length];
+            arrayStack = new T[length];
         }
         /// <inheritdoc />
-        public void Push(int value)
+        public void Push(T value)
         {
             if (Count == arrayStack.Length)
             {
@@ -35,19 +35,19 @@ namespace DelphiTask_1
             Count++;
         }
         /// <inheritdoc />
-        public int Pop()
+        public T Pop()
         {
             if (Count == 0)
             {                
                 return default;
             }
 
-            int value = arrayStack[Count - 1];
+            T value = arrayStack[Count - 1];
             Count--;
             return value;
         }
         /// <inheritdoc />
-        public int Peek()
+        public T Peek()
         {
             if(Count == 0)
             {

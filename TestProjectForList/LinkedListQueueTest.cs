@@ -14,7 +14,7 @@ namespace TestProjectForList
         {
             
             //Arrange
-            LinkedListQueue sut = new LinkedListQueue();
+            LinkedListQueue<int> sut = new LinkedListQueue<int>();
             int expected = 7;
             sut.Push(expected);
             
@@ -29,7 +29,7 @@ namespace TestProjectForList
         public void Pop_IfContaineElements_ReturnFirst()
         {
             //Arrange
-            LinkedListQueue sut = new LinkedListQueue();
+            LinkedListQueue<int> sut = new LinkedListQueue<int>();
             int expected = 7;
             sut.Push(expected);
 
@@ -44,7 +44,7 @@ namespace TestProjectForList
         public void Pop_IfContaineElements_RemoveFirst()
         {
             //Arrange
-            LinkedListQueue sut = new LinkedListQueue();
+            LinkedListQueue<int> sut = new LinkedListQueue<int>();
             int second = 7;
             int expected = 3;
             sut.Push(second);
@@ -62,7 +62,7 @@ namespace TestProjectForList
         public void Push_AddElements()
         {
             //Arrange
-            LinkedListQueue sut = new LinkedListQueue();
+            LinkedListQueue<int> sut = new LinkedListQueue<int>();
 
             //Act
             int initial = sut.Count;
@@ -76,7 +76,7 @@ namespace TestProjectForList
         public void Pop_IfNotContaineElements_ReturnDefault()
         {
             //Arrange
-            LinkedListQueue sut = new LinkedListQueue();
+            LinkedListQueue<int> sut = new LinkedListQueue<int>();
 
             //Act
             int expected = sut.Pop();
@@ -89,7 +89,7 @@ namespace TestProjectForList
         public void Peek_IfNotContaineElements_ReturnDefault()
         {
             //Arrange
-            LinkedListQueue sut = new LinkedListQueue();
+            LinkedListQueue<int> sut = new LinkedListQueue<int>();
 
             //Act
             int expected = sut.Peek();

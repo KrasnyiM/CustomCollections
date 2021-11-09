@@ -14,7 +14,7 @@ namespace TestProjectForList
         public void Peek_IfContainElements_ReturnFirst()
         {
             //Arrange
-            LinkedListRingBuffer sut = new LinkedListRingBuffer(1);
+            LinkedListRingBuffer<int> sut = new LinkedListRingBuffer<int>(1);
             int expected = 7;
             sut.Push(expected);
 
@@ -29,7 +29,7 @@ namespace TestProjectForList
         public void Pop_IfContaineElements_ReturnFirst()
         {
             //Arrange
-            LinkedListRingBuffer sut = new LinkedListRingBuffer(1);
+            LinkedListRingBuffer<int> sut = new LinkedListRingBuffer<int>(1);
             int expected = 7;
             sut.Push(expected);
 
@@ -44,7 +44,7 @@ namespace TestProjectForList
         public void Pop_IfContaineElements_RemoveFirst()
         {
             //Arrange
-            LinkedListRingBuffer sut = new LinkedListRingBuffer(2);
+            LinkedListRingBuffer<int> sut = new LinkedListRingBuffer<int>(2);
             int first = 7;
             int expected = 3;
             sut.Push(first);
@@ -62,7 +62,7 @@ namespace TestProjectForList
         public void Push_AddElements()
         {
             //Arrange
-            LinkedListRingBuffer sut = new LinkedListRingBuffer(1);
+            LinkedListRingBuffer<int> sut = new LinkedListRingBuffer<int>(1);
 
             //Act
             int initial = sut.Count;
@@ -77,7 +77,7 @@ namespace TestProjectForList
         public void Pop_IfNotContaineElements_ReturnDefault()
         {
             //Arrange
-            LinkedListRingBuffer sut = new LinkedListRingBuffer(1);
+            LinkedListRingBuffer<int> sut = new LinkedListRingBuffer<int>(1);
 
             //Act
             int expected = sut.Pop();
@@ -90,7 +90,7 @@ namespace TestProjectForList
         public void Peek_IfNotContaineElements_ReturnDefault()
         {
             //Arrange
-            LinkedListRingBuffer sut = new LinkedListRingBuffer(1);
+            LinkedListRingBuffer<int> sut = new LinkedListRingBuffer<int>(1);
 
             //Act
             int expected = sut.Peek();
