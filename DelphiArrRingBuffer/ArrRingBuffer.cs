@@ -14,6 +14,7 @@ namespace DelphiTask_1
         private T[] arrBuffer;
         private int head;
         private int tail;
+        private int popIndex;
         /// <inheritdoc />
         public int Count { get; private set; }
         /// <summary>
@@ -25,6 +26,27 @@ namespace DelphiTask_1
             head = 0;
             tail = 0;
             arrBuffer = new T[length];
+        }
+        /// <summary>
+        /// Indexer for obtaining and installing array elements.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public T this[int index]
+        {
+            get
+            {
+                index += popIndex;
+                if (index >= arrBuffer.Length)
+                {
+                    return default;
+                }
+                return arrBuffer[index];
+            }
+            set
+            {
+                arrBuffer[index] = value;
+            }
         }
         /// <inheritdoc />
         public T Peek()
@@ -57,7 +79,8 @@ namespace DelphiTask_1
 
             T result = arrBuffer[tail];
             Count--;
-            tail = (tail+1) % arrBuffer.Length;            
+            tail = (tail+1) % arrBuffer.Length;
+            popIndex = (popIndex + 1) % arrBuffer.Length;
             return result;
         }
     }
