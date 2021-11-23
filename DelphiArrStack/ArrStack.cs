@@ -32,10 +32,20 @@ namespace DelphiTask_1
         {
             get
             {
+                if(index >= arrayStack.Length)
+                {
+                    return default;
+                }
+                index = Count - index - 1;
                 return arrayStack[index];
             }
             set
             {
+                if (index >= arrayStack.Length)
+                {
+                    return;
+                }
+                index = Count - index - 1;
                 arrayStack[index] = value;
             }
         }

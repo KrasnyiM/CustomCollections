@@ -32,7 +32,7 @@ namespace DelphiTask_1
         {
             get
             {
-                if (index == arrayQueue.Length)
+                if (index >= arrayQueue.Length)
                 {
                     return default;
                 }
@@ -40,6 +40,10 @@ namespace DelphiTask_1
             }
             set
             {
+                if (index >= arrayQueue.Length)
+                {
+                    return;
+                }
                 arrayQueue[index] = value;
             }
         }
