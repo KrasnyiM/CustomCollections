@@ -26,6 +26,33 @@ namespace DelphiTask_1
             tail = 0;
             arrBuffer = new T[length];
         }
+        /// <summary>
+        /// Indexer for obtaining and installing array elements.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public T this[int index]
+        {
+            get
+            {   
+                if(index >= Count)
+                {
+                    return default;
+                }
+                index = (index + tail) % arrBuffer.Length;
+                return arrBuffer[index];
+
+            }
+            set
+            {
+                if (index >= Count)
+                {
+                    return;
+                }
+                index = (index + tail) % arrBuffer.Length;
+                arrBuffer[index] = value;
+            }
+        }
         /// <inheritdoc />
         public T Peek()
         {
@@ -57,7 +84,7 @@ namespace DelphiTask_1
 
             T result = arrBuffer[tail];
             Count--;
-            tail = (tail+1) % arrBuffer.Length;            
+            tail = (tail+1) % arrBuffer.Length;
             return result;
         }
     }

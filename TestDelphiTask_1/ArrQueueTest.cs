@@ -4,7 +4,6 @@ using DelphiTask_1;
 
 namespace TestDelphiTask_1
 {
-    
     public class ArrQueueTest
     {
         [Fact]
@@ -68,6 +67,20 @@ namespace TestDelphiTask_1
             //Assert
             Assert.Equal(initial, 0);
             Assert.Equal(sut.Count, 1);
+        }
+
+        [Fact]
+        public void Indexer_ReadElements()
+        {
+            //Arrange
+            ArrQueue<int> sut = new ArrQueue<int>(1);
+            sut.Push(1);
+
+            //Act
+            int expected = sut[0];
+
+            //Assert
+            Assert.Equal(expected, 1);
         }
     }
 }

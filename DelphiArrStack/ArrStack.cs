@@ -23,6 +23,32 @@ namespace DelphiTask_1
             Count = 0;
             arrayStack = new T[length];
         }
+        /// <summary>
+        /// Indexer for obtaining and installing array elements.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public T this[int index]
+        {
+            get
+            {
+                if(index >= arrayStack.Length)
+                {
+                    return default;
+                }
+                index = Count - index - 1;
+                return arrayStack[index];
+            }
+            set
+            {
+                if (index >= arrayStack.Length)
+                {
+                    return;
+                }
+                index = Count - index - 1;
+                arrayStack[index] = value;
+            }
+        }
         /// <inheritdoc />
         public void Push(T value)
         {

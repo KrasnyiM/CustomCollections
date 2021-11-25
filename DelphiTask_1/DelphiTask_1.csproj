@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,7 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DelphiArrQueue\DelphiArrQueue.csproj" />
+    <ProjectReference Include="..\DelphiArrRingBuffer\DelphiArrRingBuffer.csproj" />
+    <ProjectReference Include="..\DelphiArrStack\DelphiArrStack.csproj" />
     <ProjectReference Include="..\DelphiCommon\DelphiCommon.csproj" />
+    <ProjectReference Include="..\DelphiLinkedListQueue\DelphiLinkedListQueue.csproj" />
+    <ProjectReference Include="..\DelphiLinkedListRingBuffer\DelphiLinkedListRingBuffer.csproj" />
+    <ProjectReference Include="..\DelphiLinkedListStack\DelphiLinkedListStack.csproj" />
+    <ProjectReference Include="..\DelphiLinkedList\DelphiLinkedList.csproj" />
   </ItemGroup>
 
 </Project>

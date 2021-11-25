@@ -23,6 +23,30 @@ namespace DelphiTask_1
             Count = 0;
             arrayQueue = new T[length];
         }
+        /// <summary>
+        /// Indexer for obtaining and installing array elements.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public T this[int index]
+        {
+            get
+            {
+                if (index >= arrayQueue.Length)
+                {
+                    return default;
+                }
+                return arrayQueue[index];
+            }
+            set
+            {
+                if (index >= arrayQueue.Length)
+                {
+                    return;
+                }
+                arrayQueue[index] = value;
+            }
+        }
         ///<inheritdoc/>
         public T Peek()
         {

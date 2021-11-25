@@ -30,7 +30,7 @@ namespace TestDelphiTask_1
         {
             //Arrange
             ArrRingBuffer<int> sut = new ArrRingBuffer<int>(1);
-            int expected= 7;
+            int expected = 7;
             sut.Push(expected);
 
             //Act
@@ -45,7 +45,7 @@ namespace TestDelphiTask_1
         {
             //Arrange
             ArrRingBuffer<int> sut = new ArrRingBuffer<int>(2);
-            int first= 7;
+            int first = 7;
             int expected = 3;
             sut.Push(first);
             sut.Push(expected);
@@ -73,5 +73,58 @@ namespace TestDelphiTask_1
             Assert.Equal(sut.Count, 1);
         }
 
+        [Fact]
+        public void Indexer_ReadElements()
+        {
+            //Arrange
+            ArrRingBuffer<int> sut = new ArrRingBuffer<int>(1);
+            sut.Push(1);
+
+            //Act
+            int expected = sut[0];
+
+            //Assert
+            Assert.Equal(expected, 1);
+        }
+
+        [Fact]
+        public void Indexer_ReturnElementsAfterEditBuffer()
+        {
+            //Arrange
+            ArrRingBuffer<int> sut = new ArrRingBuffer<int>(5);
+            sut.Push(1);
+            sut.Push(2);
+            sut.Push(3);
+            sut.Push(4);
+            sut.Push(5);
+            sut.Pop();
+            sut.Pop();
+            sut.Push(6);
+
+            //Act
+            int expected = sut[3];
+
+            //Assert
+            Assert.Equal(expected, 6);
+        }
+
+        [Fact]
+        public void Indexer_ReturnElementsIfTailMiddleHeadEnd()
+        {
+            //Arrange
+            ArrRingBuffer<int> sut = new ArrRingBuffer<int>(5);
+            sut.Push(1);
+            sut.Push(2);
+            sut.Pop();
+            sut.Pop();
+            sut.Push(3);
+            sut.Push(4);
+
+            //Act
+            int expected = sut[0];
+
+            //Assert
+            Assert.Equal(expected, 3);
+        }
     }
 }
