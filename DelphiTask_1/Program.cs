@@ -1,4 +1,5 @@
 ﻿using System;
+using DelphiExceptions;
 
 namespace DelphiTask_1
 {

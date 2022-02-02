@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using DelphiTask_1;
+using DelphiExceptions;
 
 namespace TestDelphiTask_1
 {
@@ -11,7 +12,7 @@ namespace TestDelphiTask_1
         {
             //Arrange
             ArrQueue<int> sut = new ArrQueue<int>(1);
-            int expected= 7;
+            int expected = 7;
             sut.Push(expected);
 
             //Act
@@ -26,7 +27,7 @@ namespace TestDelphiTask_1
         {
             //Arrange
             ArrQueue<int> sut = new ArrQueue<int>(1);
-            int expected= 7;
+            int expected = 7;
             sut.Push(expected);
 
             //Act
@@ -41,7 +42,7 @@ namespace TestDelphiTask_1
         {
             //Arrange
             ArrQueue<int> sut = new ArrQueue<int>(2);
-            int first= 7;
+            int first = 7;
             int expected = 3;
             sut.Push(first);
             sut.Push(expected);
@@ -81,6 +82,34 @@ namespace TestDelphiTask_1
 
             //Assert
             Assert.Equal(expected, 1);
+        }
+
+        [Fact]
+        public void Indexer_SetElenents()
+        {
+            //Arrange
+            ArrQueue<int> sut = new ArrQueue<int>(1);
+            sut.Push(1);
+
+            //Act
+            sut[0] = 22;
+            int expected = sut[0];
+
+            //Assert
+            Assert.Equal(expected, 22);
+        }
+
+        [Fact]
+        public void Indexer_ReturnException()
+        {
+            //Arrange
+            ArrQueue<int> sut = new ArrQueue<int>(1);
+            sut.Push(1);
+
+            //Act
+
+            //Assert
+            Assert.Throws<ElementNotFound>(() => sut[9]);
         }
     }
 }

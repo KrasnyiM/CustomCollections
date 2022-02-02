@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiTask_1", "DelphiTask_1\DelphiTask_1.csproj", "{148B15DB-221E-405C-AF65-135717450B78}"
 EndProject
@@ -11,19 +11,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjectForList", "TestP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiCommon", "DelphiCommon\DelphiCommon.csproj", "{4CBA755B-79DF-491F-8442-F5CC59D34C10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiArrQueue", "DelphiArrQueue\DelphiArrQueue.csproj", "{EF792294-9A26-413D-9F85-8A53417AB83A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiArrQueue", "DelphiArrQueue\DelphiArrQueue.csproj", "{EF792294-9A26-413D-9F85-8A53417AB83A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiArrStack", "DelphiArrStack\DelphiArrStack.csproj", "{1676D888-4FFA-4EE0-B630-7C6D45F99435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiArrStack", "DelphiArrStack\DelphiArrStack.csproj", "{1676D888-4FFA-4EE0-B630-7C6D45F99435}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiArrRingBuffer", "DelphiArrRingBuffer\DelphiArrRingBuffer.csproj", "{1C9E917A-14AD-486F-A00E-B7F61BBF15D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiArrRingBuffer", "DelphiArrRingBuffer\DelphiArrRingBuffer.csproj", "{1C9E917A-14AD-486F-A00E-B7F61BBF15D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiLinkedList", "DelphiLinkedList\DelphiLinkedList.csproj", "{AF350D18-000F-4E1E-A841-3D2945EAD165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiLinkedList", "DelphiLinkedList\DelphiLinkedList.csproj", "{AF350D18-000F-4E1E-A841-3D2945EAD165}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiLinkedListStack", "DelphiLinkedListStack\DelphiLinkedListStack.csproj", "{F32388D4-D752-4D2C-A160-42179ABB16A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiLinkedListStack", "DelphiLinkedListStack\DelphiLinkedListStack.csproj", "{F32388D4-D752-4D2C-A160-42179ABB16A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiLinkedListQueue", "DelphiLinkedListQueue\DelphiLinkedListQueue.csproj", "{9BCBE666-3288-431A-9B62-559B6C39E71F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiLinkedListQueue", "DelphiLinkedListQueue\DelphiLinkedListQueue.csproj", "{9BCBE666-3288-431A-9B62-559B6C39E71F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiLinkedListRingBuffer", "DelphiLinkedListRingBuffer\DelphiLinkedListRingBuffer.csproj", "{83271DD3-99F8-477B-ABE7-2E2B9F69F8BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiLinkedListRingBuffer", "DelphiLinkedListRingBuffer\DelphiLinkedListRingBuffer.csproj", "{83271DD3-99F8-477B-ABE7-2E2B9F69F8BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiExceptions", "DelphiExeptions\DelphiExceptions.csproj", "{0517D5DA-587A-4BBC-A14E-6301128126E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{83271DD3-99F8-477B-ABE7-2E2B9F69F8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83271DD3-99F8-477B-ABE7-2E2B9F69F8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83271DD3-99F8-477B-ABE7-2E2B9F69F8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0517D5DA-587A-4BBC-A14E-6301128126E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0517D5DA-587A-4BBC-A14E-6301128126E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0517D5DA-587A-4BBC-A14E-6301128126E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0517D5DA-587A-4BBC-A14E-6301128126E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

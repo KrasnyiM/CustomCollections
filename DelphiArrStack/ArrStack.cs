@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DelphiExceptions;
 
 namespace DelphiTask_1
 {
@@ -32,19 +33,21 @@ namespace DelphiTask_1
         {
             get
             {
-                if(index >= arrayStack.Length)
+                if(index >= Count || index < 0)
                 {
-                    return default;
+                    throw new ElementNotFound();
                 }
+
                 index = Count - index - 1;
                 return arrayStack[index];
             }
             set
             {
-                if (index >= arrayStack.Length)
+                if (index >= Count || index < 0)
                 {
-                    return;
+                    throw new ElementNotFound();
                 }
+
                 index = Count - index - 1;
                 arrayStack[index] = value;
             }
@@ -54,7 +57,7 @@ namespace DelphiTask_1
         {
             if (Count == arrayStack.Length)
             {
-                return;
+                throw new ContainerFullException();
             }
 
             arrayStack[Count] = value;
@@ -64,8 +67,8 @@ namespace DelphiTask_1
         public T Pop()
         {
             if (Count == 0)
-            {                
-                return default;
+            {
+                throw new ContainerEmptyException();
             }
 
             T value = arrayStack[Count - 1];
@@ -77,7 +80,7 @@ namespace DelphiTask_1
         {
             if(Count == 0)
             {
-                return default;
+                throw new ContainerEmptyException();
             }
             return arrayStack[Count - 1];
         }
