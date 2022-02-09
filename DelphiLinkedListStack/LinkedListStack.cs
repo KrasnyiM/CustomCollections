@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DelphiExceptions;
 
 namespace DelphiTask_1
 {
@@ -36,6 +37,11 @@ namespace DelphiTask_1
         /// <inheritdoc/>
         public T Pop()
         {
+            if(Count == 0)
+            {
+                throw new ContainerEmptyException();
+            }
+
             T value = Head.Data;
             Head = Head.Next;
             Count--;
@@ -45,6 +51,11 @@ namespace DelphiTask_1
         /// <inheritdoc/>
         public T Peek()
         {
+            if (Count == 0)
+            {
+                throw new ContainerEmptyException();
+            }
+
             return Head.Data;
         }
     }

@@ -10,6 +10,7 @@
     <ProjectReference Include="..\DelphiArrRingBuffer\DelphiArrRingBuffer.csproj" />
     <ProjectReference Include="..\DelphiArrStack\DelphiArrStack.csproj" />
     <ProjectReference Include="..\DelphiCommon\DelphiCommon.csproj" />
+    <ProjectReference Include="..\DelphiExeptions\DelphiExceptions.csproj" />
     <ProjectReference Include="..\DelphiLinkedListQueue\DelphiLinkedListQueue.csproj" />
     <ProjectReference Include="..\DelphiLinkedListRingBuffer\DelphiLinkedListRingBuffer.csproj" />
     <ProjectReference Include="..\DelphiLinkedListStack\DelphiLinkedListStack.csproj" />

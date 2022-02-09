@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DelphiExceptions;
 
 namespace DelphiTask_1
 {
@@ -66,7 +67,7 @@ namespace DelphiTask_1
         {
             if (Count == 0)
             {
-                return default;
+                throw new ContainerEmptyException();
             }
             return Read.Data;
         }
@@ -75,7 +76,7 @@ namespace DelphiTask_1
         {
             if (Count == 0)
             {
-                return default;
+                throw new ContainerEmptyException();
             }
 
             T value;
@@ -90,7 +91,7 @@ namespace DelphiTask_1
         {
             if (length == Count)
             {
-                return;
+                throw new ContainerFullException();
             }   
             
             Write.Data = value;

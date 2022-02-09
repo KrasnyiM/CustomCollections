@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using DelphiTask_1;
+using DelphiExceptions;
 
 namespace TestProjectForList
 {
@@ -11,8 +12,7 @@ namespace TestProjectForList
     {
         [Fact]
         public void Peek_IfContainElements_ReturnFirst()
-        {
-            
+        {            
             //Arrange
             LinkedListQueue<int> sut = new LinkedListQueue<int>();
             int expected = 7;
@@ -79,10 +79,9 @@ namespace TestProjectForList
             LinkedListQueue<int> sut = new LinkedListQueue<int>();
 
             //Act
-            int expected = sut.Pop();
 
             //Assert
-            Assert.Equal(expected, 0);
+            Assert.Throws<ContainerEmptyException>(() => sut.Pop());
         }
 
         [Fact]
@@ -92,10 +91,9 @@ namespace TestProjectForList
             LinkedListQueue<int> sut = new LinkedListQueue<int>();
 
             //Act
-            int expected = sut.Peek();
 
             //Assert
-            Assert.Equal(expected, 0);
+            Assert.Throws <ContainerEmptyException>(() => sut.Peek());
         }
     }
 }

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DelphiCommon\DelphiCommon.csproj" />
+    <ProjectReference Include="..\DelphiExeptions\DelphiExceptions.csproj" />
   </ItemGroup>
 
 </Project>

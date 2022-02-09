@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DelphiExceptions;
 
 namespace DelphiTask_1
 {
@@ -35,20 +36,22 @@ namespace DelphiTask_1
         {
             get
             {   
-                if(index >= Count)
+                if(index >= Count || index < 0)
                 {
-                    return default;
+                    throw new ElementNotFound();
                 }
+
                 index = (index + tail) % arrBuffer.Length;
                 return arrBuffer[index];
 
             }
             set
             {
-                if (index >= Count)
+                if (index >= Count || index < 0)
                 {
-                    return;
+                    throw new ElementNotFound();
                 }
+
                 index = (index + tail) % arrBuffer.Length;
                 arrBuffer[index] = value;
             }
@@ -58,7 +61,7 @@ namespace DelphiTask_1
         {
             if (Count == 0)
             {
-                return default;
+                throw new ContainerEmptyException();
             }
             return arrBuffer[tail];
         }
@@ -67,7 +70,7 @@ namespace DelphiTask_1
         {
             if (Count == arrBuffer.Length)
             {
-                return;
+                throw new ContainerFullException();
             }
 
             arrBuffer[head] = value;
@@ -79,7 +82,7 @@ namespace DelphiTask_1
         {
             if(Count == 0)
             {
-                return default;
+                throw new ContainerEmptyException();
             }
 
             T result = arrBuffer[tail];

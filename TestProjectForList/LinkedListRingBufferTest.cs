@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using DelphiTask_1;
+using DelphiExceptions;
 
 namespace TestProjectForList
 {
@@ -80,10 +81,9 @@ namespace TestProjectForList
             LinkedListRingBuffer<int> sut = new LinkedListRingBuffer<int>(1);
 
             //Act
-            int expected = sut.Pop();
 
             //Assert
-            Assert.Equal(expected, 0);
+            Assert.Throws<ContainerEmptyException>(() => sut.Pop());
         }
 
         [Fact]
@@ -93,10 +93,9 @@ namespace TestProjectForList
             LinkedListRingBuffer<int> sut = new LinkedListRingBuffer<int>(1);
 
             //Act
-            int expected = sut.Peek();
 
             //Assert
-            Assert.Equal(expected, 0);
+            Assert.Throws<ContainerEmptyException>(() => sut.Pop());
         }
     }
 }

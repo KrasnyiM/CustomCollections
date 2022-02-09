@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DelphiExceptions;
 
 namespace DelphiTask_1
 {
     /// <summary>
     /// MyLinkeList, Class which implement array based queue.
     /// </summary>
-    public class ArrQueue<T>: IFunc<T>
+    public class ArrQueue<T> : IFunc<T>
     {
         private T[] arrayQueue;
         ///<inheritdoc/>
@@ -32,17 +33,17 @@ namespace DelphiTask_1
         {
             get
             {
-                if (index >= arrayQueue.Length)
+                if (index >= Count || index < 0)
                 {
-                    return default;
+                    throw new ElementNotFound();
                 }
                 return arrayQueue[index];
             }
             set
             {
-                if (index >= arrayQueue.Length)
+                if (index >= Count || index < 0)
                 {
-                    return;
+                    throw new ElementNotFound();
                 }
                 arrayQueue[index] = value;
             }
@@ -52,7 +53,7 @@ namespace DelphiTask_1
         {
             if (Count == 0)
             {
-                return default;
+                throw new ContainerEmptyException();
             }
             return arrayQueue[0];
         }
@@ -61,7 +62,7 @@ namespace DelphiTask_1
         {
             if (Count == 0)
             {
-                return default;
+                throw new ContainerEmptyException();
             }
 
             T value = arrayQueue[0];
@@ -80,7 +81,7 @@ namespace DelphiTask_1
         {
             if (Count == arrayQueue.Length)
             {
-                return;
+                throw new ContainerFullException();
             }
 
             arrayQueue[Count] = value;
