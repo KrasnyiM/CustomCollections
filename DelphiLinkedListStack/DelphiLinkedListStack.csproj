@@ -8,6 +8,7 @@
     <ProjectReference Include="..\DelphiCommon\DelphiCommon.csproj" />
     <ProjectReference Include="..\DelphiExeptions\DelphiExceptions.csproj" />
     <ProjectReference Include="..\DelphiLinkedList\DelphiLinkedList.csproj" />
+    <ProjectReference Include="..\OwnEventArgs\DelphiEventArgs.csproj" />
   </ItemGroup>
 
 </Project>

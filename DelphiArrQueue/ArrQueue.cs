@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DelphiExceptions;
+using DelphiEventArgs;
 
 namespace DelphiTask_1
 {
@@ -12,6 +13,10 @@ namespace DelphiTask_1
     /// </summary>
     public class ArrQueue<T> : IFunc<T>
     {
+
+        public delegate void StatusElements(OwnEventArgs<T> args);
+        public event StatusElements Notify;        
+
         private T[] arrayQueue;
         ///<inheritdoc/>
         public int Count { get; private set; }
@@ -22,7 +27,7 @@ namespace DelphiTask_1
         public ArrQueue(int length)
         {
             Count = 0;
-            arrayQueue = new T[length];
+            arrayQueue = new T[length];          
         }
         /// <summary>
         /// Indexer for obtaining and installing array elements.
@@ -53,8 +58,12 @@ namespace DelphiTask_1
         {
             if (Count == 0)
             {
+                Notify?.Invoke(new OwnEventArgs<T>("Container empty"));
                 throw new ContainerEmptyException();
             }
+
+            Notify?.Invoke(new OwnEventArgs<T>("Element peeked", arrayQueue[0]));
+
             return arrayQueue[0];
         }
         ///<inheritdoc/>
@@ -62,6 +71,7 @@ namespace DelphiTask_1
         {
             if (Count == 0)
             {
+                Notify?.Invoke(new OwnEventArgs<T>("Container empty"));
                 throw new ContainerEmptyException();
             }
 
@@ -74,6 +84,9 @@ namespace DelphiTask_1
 
             arrayQueue[Count - 1] = default;
             Count--;
+
+            Notify?.Invoke(new OwnEventArgs<T>("Element poped", value));
+
             return value;
         }
         ///<inheritdoc/>
@@ -81,11 +94,14 @@ namespace DelphiTask_1
         {
             if (Count == arrayQueue.Length)
             {
+                Notify?.Invoke(new OwnEventArgs<T>("Container full"));
                 throw new ContainerFullException();
             }
-
+            
             arrayQueue[Count] = value;
             Count++;
+
+            Notify?.Invoke(new OwnEventArgs <T> ("Element pushed", value));           
         }
     }
 }

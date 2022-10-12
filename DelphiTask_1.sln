@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiLinkedListQueue", "De
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiLinkedListRingBuffer", "DelphiLinkedListRingBuffer\DelphiLinkedListRingBuffer.csproj", "{83271DD3-99F8-477B-ABE7-2E2B9F69F8BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelphiExceptions", "DelphiExeptions\DelphiExceptions.csproj", "{0517D5DA-587A-4BBC-A14E-6301128126E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiExceptions", "DelphiExeptions\DelphiExceptions.csproj", "{0517D5DA-587A-4BBC-A14E-6301128126E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelphiEventArgs", "OwnEventArgs\DelphiEventArgs.csproj", "{97B90C4D-818A-40B9-B339-6F96A8E55C2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{0517D5DA-587A-4BBC-A14E-6301128126E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0517D5DA-587A-4BBC-A14E-6301128126E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0517D5DA-587A-4BBC-A14E-6301128126E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B90C4D-818A-40B9-B339-6F96A8E55C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B90C4D-818A-40B9-B339-6F96A8E55C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B90C4D-818A-40B9-B339-6F96A8E55C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B90C4D-818A-40B9-B339-6F96A8E55C2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

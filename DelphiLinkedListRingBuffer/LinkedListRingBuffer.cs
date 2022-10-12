@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DelphiExceptions;
+using DelphiEventArgs;
 
 namespace DelphiTask_1
 {
     public class LinkedListRingBuffer<T> : IFunc<T>
     {
+        public delegate void StatusElements(OwnEventArgs<T> args);
+        public event StatusElements Notify;
         /// <summary>
         /// Property which stores a reference to the first element.
         /// </summary>

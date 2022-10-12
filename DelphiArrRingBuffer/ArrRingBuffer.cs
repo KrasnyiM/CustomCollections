@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DelphiExceptions;
+using DelphiEventArgs;
 
 namespace DelphiTask_1
 {
@@ -12,6 +13,9 @@ namespace DelphiTask_1
     /// </summary>
     public class ArrRingBuffer<T> : IFunc<T>
     {
+        public delegate void StatusElements(OwnEventArgs<T> args);
+        public event StatusElements Notify;
+
         private T[] arrBuffer;
         private int head;
         private int tail;
@@ -41,9 +45,8 @@ namespace DelphiTask_1
                     throw new ElementNotFound();
                 }
 
-                index = (index + tail) % arrBuffer.Length;
+                //index = (index + tail) % arrBuffer.Length;
                 return arrBuffer[index];
-
             }
             set
             {
@@ -52,7 +55,7 @@ namespace DelphiTask_1
                     throw new ElementNotFound();
                 }
 
-                index = (index + tail) % arrBuffer.Length;
+                //index = (index + tail) % arrBuffer.Length;
                 arrBuffer[index] = value;
             }
         }
@@ -61,8 +64,12 @@ namespace DelphiTask_1
         {
             if (Count == 0)
             {
+                Notify?.Invoke(new OwnEventArgs<T>("Container empty"));
                 throw new ContainerEmptyException();
             }
+
+            Notify?.Invoke(new OwnEventArgs<T>("Element peeked", arrBuffer[tail]));
+
             return arrBuffer[tail];
         }
         /// <inheritdoc />
@@ -70,25 +77,39 @@ namespace DelphiTask_1
         {
             if (Count == arrBuffer.Length)
             {
+                Notify?.Invoke(new OwnEventArgs<T>("Container full"));
                 throw new ContainerFullException();
             }
 
             arrBuffer[head] = value;
             Count++;
-            head = (head + 1) % arrBuffer.Length;             
+            head = (head + 1) % arrBuffer.Length;
+
+            Notify?.Invoke(new OwnEventArgs<T>("Element pushed", value));
         }
         /// <inheritdoc />
         public T Pop()
         {
             if(Count == 0)
             {
+                Notify?.Invoke(new OwnEventArgs<T>("Container empty"));
                 throw new ContainerEmptyException();
             }
 
             T result = arrBuffer[tail];
             Count--;
             tail = (tail+1) % arrBuffer.Length;
+
+            Notify?.Invoke(new OwnEventArgs<T>("Element poped", result));
+
             return result;
+        }
+        public void Show()
+        {
+            for(int i = 0; i < Count; i++)
+            {
+                Console.WriteLine(arrBuffer[i]);
+            }
         }
     }
 }

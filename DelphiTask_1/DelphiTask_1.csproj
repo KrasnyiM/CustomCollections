@@ -15,6 +15,7 @@
     <ProjectReference Include="..\DelphiLinkedListRingBuffer\DelphiLinkedListRingBuffer.csproj" />
     <ProjectReference Include="..\DelphiLinkedListStack\DelphiLinkedListStack.csproj" />
     <ProjectReference Include="..\DelphiLinkedList\DelphiLinkedList.csproj" />
+    <ProjectReference Include="..\OwnEventArgs\DelphiEventArgs.csproj" />
   </ItemGroup>
 
 </Project>

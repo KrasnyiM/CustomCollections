@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DelphiExceptions;
+using DelphiEventArgs;
 
 namespace DelphiTask_1
 {
@@ -12,6 +13,9 @@ namespace DelphiTask_1
     /// </summary>
     public class MyLinkedList<T> : IFunc<T>
     {
+        public delegate void StatusElements(OwnEventArgs<T> args);
+        public event StatusElements Notify;
+
         /// <summary>
         /// Property which stores a reference to the current element.
         /// </summary>
@@ -33,18 +37,23 @@ namespace DelphiTask_1
             node.Next = Head;
             Head = node;
             Count++;
+
+            Notify?.Invoke(new OwnEventArgs<T>("Element pushed", value));
         }
         /// <inheritdoc/>
         public T Pop()
         {
             if (Count == 0)
             {
+                Notify?.Invoke(new OwnEventArgs<T>("Container empty"));
                 throw new ContainerEmptyException();
             }
 
             T value = Head.Data;
             Head = Head.Next;
             Count--;
+
+            Notify?.Invoke(new OwnEventArgs<T>("Element poped", value));
 
             return value;
         }
@@ -53,8 +62,11 @@ namespace DelphiTask_1
         {
             if(Count == 0)
             {
+                Notify?.Invoke(new OwnEventArgs<T>("Container empty"));
                 throw new ContainerEmptyException();
             }
+            Notify?.Invoke(new OwnEventArgs<T>("Element peeked", Head.Data));
+
             return Head.Data;
         }
     }
